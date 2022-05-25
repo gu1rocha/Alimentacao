@@ -1,0 +1,192 @@
+:root {
+    --vermelho: #ff000d;
+    --preto: #141414;
+    --blue: #2196F3;
+    --background: rgb(25 42 50);
+    --colorItem: rgb(31 53 64);
+    --colorItemHover: rgb(31 60 64);
+    --green: #31c33d;
+    --colorO: #f1b237;
+    --gray: #a6bec8;
+    --finally: #28a3e0;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+div.jogo{
+    display: flex;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 1em 0;
+}
+
+@media screen and (min-width: 500px) {body{ font-size: 42px;}}
+@media screen and (max-width: 499px) {body{ font-size: 8.4vw;}}
+
+
+section.boxInputs{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: center;
+    margin-top: 1em;
+}
+
+.boxInputs div{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    grid-auto-rows: minmax(2em, auto);
+    align-items: center;
+    border: solid 1px;
+    padding: 0.2em;
+    border-radius: 0.5em;
+    grid-row-gap: 10px;
+}
+
+.boxInputs div img{
+    width: 2.2em;
+    height: 2.2em;
+    font-size: 2em;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.boxInputs div label{
+    width: 2em;
+    height: 2em;
+    line-height: 1.5em;
+    border-radius: 50%;
+    background-color: gainsboro;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: rgb(150 150 150) 5px 5px 2px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.boxInputs div label.saudavel{
+    background-image: url(..//img/saudavel.png);
+}
+
+.boxInputs div label.naoSaudavel{
+    background-image: url(..//img/naoSaudavel.png);
+}
+
+label.pequeno{
+    width: 1.5em;
+    height: 1.5em;
+}
+
+label.grande{
+    width: 3em;
+    height: 3em;
+}
+
+label:hover{
+    background-color: rgb(179, 179, 179);
+}
+
+label:active{
+    background-color: #819199;
+    box-shadow: rgb(17 33 43) 0 0 2px;
+}
+
+.boxInputs div label.respondido{
+    box-shadow: none;
+    pointer-events: none;
+}
+
+.boxInputs div label.erro{
+    box-shadow: inset 2em 2em var(--vermelho);
+}
+
+.boxInputs div label.acerto{
+    box-shadow: inset 2em 2em var(--green);
+}
+
+input[type=radio]{
+	display: none;
+}
+
+#backParabens{
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .5);
+    background-image: url("../img/confete.png");
+    background-repeat: repeat-y;
+    animation: snow 4s linear infinite;
+    -webkit-animation: snow 4s linear infinite;
+    -moz-animation: snow 4s linear infinite;
+    -ms-animation: snow 4s linear infinite;
+}
+
+@keyframes snow {
+    0% {background-position: center 0%, center 0%, center 0%;}
+    100% {background-position: center 1120px, center 1120px, center 1120px;}
+}
+
+@-moz-keyframes snow {
+    0% {background-position: center 0%, center 0%, center 0%;}
+    100% {background-position: center 1120px, center 1120px, center 1120px;}
+}
+
+@-webkit-keyframes snow {
+    0% {background-position: center 0%, center 0%, center 0%;}
+    100% {background-position: center 1120px, center 1120px, center 1120px;}
+}
+
+@-ms-keyframes snow {
+    0% {background-position: center 0%, center 0%, center 0%;}
+    100% {background-position: center 1120px, center 1120px, center 1120px;}
+}
+
+.boxParabens{
+    width: 100%;
+    text-align: center;
+    background-color: var(--finally);
+    padding: 2em 0;
+    color: var(--green);
+}
+
+.boxParabens .boxRefresh{
+    padding-top: 1em;
+}
+
+.boxParabens .boxRefresh .refresh{
+    background-color: var(--gray);
+    padding: .5em;
+    border-radius: 10%;
+    box-shadow: rgb(17 33 43) 5px 5px 2px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.boxParabens .refresh:hover{
+    background-color: #819199;
+}
+
+.boxParabens .refresh:active{
+    background-color: #819199;
+    box-shadow: rgb(17 33 43) 0 0 2px;
+}
