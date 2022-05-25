@@ -95,7 +95,6 @@ for(let input of inputs){
         document.querySelector("#audioErro").currentTime = 0;
         document.querySelector("#audioComemorando").pause();
         document.querySelector("#audioComemorando").currentTime = 0;
-        console.log(el.path[1].querySelectorAll("input")[0])
         el.path[1].querySelectorAll("label")[0].classList.add('respondido')
         el.path[1].querySelectorAll("label")[1].classList.add('respondido')
         if(el.path[1].classList[1] === el.target.value){
