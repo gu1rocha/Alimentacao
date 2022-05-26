@@ -28,7 +28,7 @@ let EmbaralharArray = newArray => {
 
 let gerarElementos = () =>{
     let classes = EmbaralharArray(obj);
-    for(let i = 0; i < classes.length; i++){
+    for(let i = 0; i < 4; i++){
 
         let div = document.createElement("div");
         boxInputs.appendChild(div)
